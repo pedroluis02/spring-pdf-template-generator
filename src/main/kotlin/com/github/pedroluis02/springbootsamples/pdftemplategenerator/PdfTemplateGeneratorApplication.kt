@@ -1,4 +1,4 @@
-package com.github.pedroluis02.springbootsamples.springpdftemplategenerator
+package com.github.pedroluis02.springbootsamples.pdftemplategenerator
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
