@@ -19,10 +19,14 @@ repositories {
 }
 
 dependencies {
+	val itextPdfVersion = "5.0.3"
+
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("com.itextpdf:html2pdf:$itextPdfVersion")
 
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
