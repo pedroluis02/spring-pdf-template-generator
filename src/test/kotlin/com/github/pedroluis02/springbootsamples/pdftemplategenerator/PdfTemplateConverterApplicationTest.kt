@@ -5,10 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class PdfTemplateGeneratorApplicationTest {
+class PdfTemplateConverterApplicationTest {
 
 	@Autowired
-	lateinit var service: PdfGeneratorService
+	lateinit var service: PdfTemplateConverterService
 
 	@Test
 	fun shouldGeneratePdf() {
