@@ -20,10 +20,13 @@ repositories {
 
 dependencies {
 	val itextPdfVersion = "5.0.3"
+	val xhtmlRendererVersion = "9.5.2"
 
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
 	implementation("com.itextpdf:html2pdf:$itextPdfVersion")
+	implementation("org.xhtmlrenderer:flying-saucer-pdf:$xhtmlRendererVersion")
 
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
