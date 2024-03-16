@@ -3,12 +3,14 @@
 <head>
     <style>
         div.header {
-            display: block; text-align: center;
+            display: block;
+            text-align: center;
             position: running(header);
         }
 
         div.footer {
-            display: block; text-align: center;
+            display: block;
+            text-align: center;
             position: running(footer);
         }
 
@@ -43,12 +45,36 @@
             -fs-table-paginate: paginate;
             border-spacing: 0.2cm;
         }
+
+        div.header-logo {
+            width: 64px;
+            height: auto;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+        }
+
+        .column {
+           width: 25%;
+           display: inline-block;
+        }
     </style>
 </head>
 <body>
 <div class="header">
-    <h5>User Report</h5>
-    <h6>User Summary</h6>
+    <div class="row">
+        <div class="column">
+            <div class="img header-logo" data-src="templates/img/users-logo.png"></div>
+        </div>
+        <div class="column">
+            <h5>User Report</h5>
+            <h6>User Summary</h6>
+        </div>
+        <div class="column">
+        </div>
+    </div>
 </div>
 <div class="footer">
     Page <span id="page-number"></span> of <span id="page-count"></span>

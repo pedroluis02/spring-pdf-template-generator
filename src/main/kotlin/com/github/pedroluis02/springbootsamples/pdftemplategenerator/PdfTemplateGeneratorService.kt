@@ -34,10 +34,10 @@ class PdfTemplateGeneratorService(private val templateEngine: TemplateEngine) {
     private fun convert(processedTemplate: String, outputStream: OutputStream) {
         try {
             val renderer = ITextRenderer().apply {
+                sharedContext.replacedElementFactory = ImageReplacedElementFactory(sharedContext.replacedElementFactory)
                 setDocumentFromString(processedTemplate)
                 layout()
             }
-
             renderer.createPDF(outputStream, true)
         } catch (e: Exception) {
             throw e
