@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        div.header {
+            display: block; text-align: center;
+            position: running(header);
+        }
+
+        div.footer {
+            display: block; text-align: center;
+            position: running(footer);
+        }
+
+        @page {
+            size: A4 portrait;
+            /* margin-top: 1.5cm; */
+            margin-left: 2.4cm;
+            margin-right: 2.4cm;
+            /* margin-bottom: 1cm; */
+
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        @page {
+            @top-center { content: element(header) }
+        }
+
+        @page {
+            @bottom-center { content: element(footer) }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h5>User Report</h5>
+    <h6>User Summary</h6>
+</div>
+<div class="footer">
+    <h6>Report Footer</h6>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th> First Name</th>
+        <th> Last Name</th>
+        <th> Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.email}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
