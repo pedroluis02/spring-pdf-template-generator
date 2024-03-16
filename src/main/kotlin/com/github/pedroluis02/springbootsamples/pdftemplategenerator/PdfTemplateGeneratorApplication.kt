@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class PdfTemplateGeneratorApplication
 
 fun main(args: Array<String>) {
-	runApplication<PdfTemplateGeneratorApplication>(*args)
+    runApplication<PdfTemplateGeneratorApplication>(*args)
 }
