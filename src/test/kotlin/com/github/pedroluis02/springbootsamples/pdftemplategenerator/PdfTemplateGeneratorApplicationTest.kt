@@ -18,10 +18,24 @@ class PdfTemplateGeneratorApplicationTest {
             User("Name $it", "LastName $it", "example-$it@test.com")
         }
 
+        val data = mapOf(
+            "users" to users,
+            "logoData" to loadLogoData(),
+            "logoQrData" to createQrCodeData()
+        )
+
         val outputFile = "template-v2.pdf"
-        val data = mapOf<String, Any>("users" to users)
         service.generateFile("users-flying-template", data, outputFile)
 
         assertThat(File(outputFile)).exists()
+    }
+
+    private fun loadLogoData(): String {
+        return Base64ImageUtils.encodeFromResource("jpeg", "templates/img/users-logo.jpg")
+    }
+
+    private fun createQrCodeData(): String {
+        val qrCodeStream = BarcodeImageUtils.generateQrCode("123456789", 64, 64)
+        return Base64ImageUtils.encodeFromByteArray("png", qrCodeStream.toByteArray())
     }
 }
