@@ -25,7 +25,12 @@ class PdfTemplateGeneratorService(private val templateEngine: TemplateEngine) {
 
     private fun generate(template: String, data: Map<String, Any>, outputStream: OutputStream) {
         val context = Context()
-        context.setVariables(data)
+        val newData = data.toMutableMap()
+        newData["logoData"] = Base64ImageUtils.createData(
+            "jpeg", Base64ImageUtils.encodeFromResource
+                ("templates/img/users-logo.jpg")
+        )
+        context.setVariables(newData)
 
         val processedTemplate = templateEngine.process(template, context)
         return convert(processedTemplate, outputStream)
