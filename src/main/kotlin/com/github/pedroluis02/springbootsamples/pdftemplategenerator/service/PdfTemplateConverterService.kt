@@ -1,4 +1,4 @@
-package com.github.pedroluis02.springbootsamples.pdftemplategenerator
+package com.github.pedroluis02.springbootsamples.pdftemplategenerator.service
 
 import com.itextpdf.html2pdf.ConverterProperties
 import com.itextpdf.html2pdf.HtmlConverter

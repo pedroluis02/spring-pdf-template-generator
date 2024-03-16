@@ -1,5 +1,9 @@
 package com.github.pedroluis02.springbootsamples.pdftemplategenerator
 
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.image.BarcodeImageUtils
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.image.Base64ImageUtils
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.model.User
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.service.PdfTemplateGeneratorService
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

@@ -1,4 +1,4 @@
-package com.github.pedroluis02.springbootsamples.pdftemplategenerator
+package com.github.pedroluis02.springbootsamples.pdftemplategenerator.image
 
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.client.j2se.MatrixToImageWriter

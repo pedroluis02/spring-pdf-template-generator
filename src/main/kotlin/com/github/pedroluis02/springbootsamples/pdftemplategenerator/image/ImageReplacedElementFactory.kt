@@ -1,4 +1,4 @@
-package com.github.pedroluis02.springbootsamples.pdftemplategenerator
+package com.github.pedroluis02.springbootsamples.pdftemplategenerator.image
 
 import com.lowagie.text.Image
 import org.springframework.core.io.ClassPathResource

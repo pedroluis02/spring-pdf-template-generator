@@ -1,4 +1,4 @@
-package com.github.pedroluis02.springbootsamples.pdftemplategenerator
+package com.github.pedroluis02.springbootsamples.pdftemplategenerator.model
 
 data class User(
     val firstName: String,

@@ -1,6 +1,7 @@
-package com.github.pedroluis02.springbootsamples.pdftemplategenerator
+package com.github.pedroluis02.springbootsamples.pdftemplategenerator.service
 
 
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.image.ImageReplacedElementFactory
 import org.springframework.stereotype.Service
 import org.thymeleaf.TemplateEngine
 import org.thymeleaf.context.Context
