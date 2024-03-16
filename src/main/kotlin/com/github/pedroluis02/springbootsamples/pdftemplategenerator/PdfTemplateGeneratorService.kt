@@ -26,10 +26,11 @@ class PdfTemplateGeneratorService(private val templateEngine: TemplateEngine) {
     private fun generate(template: String, data: Map<String, Any>, outputStream: OutputStream) {
         val context = Context()
         val newData = data.toMutableMap()
-        newData["logoData"] = Base64ImageUtils.createData(
-            "jpeg", Base64ImageUtils.encodeFromResource
-                ("templates/img/users-logo.jpg")
-        )
+        newData["logoData"] = Base64ImageUtils.encodeFromResource("jpeg", "templates/img/users-logo.jpg")
+
+        val qrCodeStream = BarcodeImageUtils.generateQrCode("123456789", 64, 64)
+        newData["logoQrData"] = Base64ImageUtils.encodeFromByteArray("png", qrCodeStream.toByteArray())
+
         context.setVariables(newData)
 
         val processedTemplate = templateEngine.process(template, context)

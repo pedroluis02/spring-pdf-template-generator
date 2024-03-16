@@ -6,16 +6,16 @@ import java.util.*
 
 object Base64ImageUtils {
 
-    fun encodeFromResource(resource: String): String {
+    fun encodeFromResource(type: String, resource: String): String {
         val pathResource = ClassPathResource(resource)
-        return encode(pathResource.contentAsByteArray)
+        return encodeFromByteArray(type, pathResource.contentAsByteArray)
     }
 
-    fun createData(type: String, data: String): String {
+    fun encodeFromByteArray(type: String, byteArray: ByteArray): String {
+        return createData(type, Base64.getEncoder().encodeToString(byteArray))
+    }
+
+    private fun createData(type: String, data: String): String {
         return "data:image/$type;base64,$data";
-    }
-
-    private fun encode(byteArray: ByteArray): String {
-        return Base64.getEncoder().encodeToString(byteArray);
     }
 }
