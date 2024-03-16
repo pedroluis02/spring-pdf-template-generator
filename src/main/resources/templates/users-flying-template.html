@@ -30,6 +30,14 @@
         @page {
             @bottom-center { content: element(footer) }
         }
+
+        #page-number::before {
+            content: counter(page);
+        }
+
+        #page-count::before {
+            content: counter(pages);
+        }
     </style>
 </head>
 <body>
@@ -38,7 +46,7 @@
     <h6>User Summary</h6>
 </div>
 <div class="footer">
-    <h6>Report Footer</h6>
+    Page <span id="page-number"></span> of <span id="page-count"></span>
 </div>
 <table class="table">
     <thead>
