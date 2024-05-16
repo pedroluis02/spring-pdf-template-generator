@@ -17,7 +17,7 @@ class PdfTemplateConverterService(private val templateEngine: TemplateEngine) {
         val outputStream = generate(template, data)
         val fileOutputStream = FileOutputStream(output)
         outputStream.use {
-            outputStream.writeTo(fileOutputStream)
+            it.writeTo(fileOutputStream)
         }
     }
 
