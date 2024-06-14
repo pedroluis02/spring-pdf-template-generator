@@ -8,17 +8,19 @@ import com.itextpdf.kernel.pdf.PdfWriter
 import org.springframework.stereotype.Service
 import org.thymeleaf.TemplateEngine
 import org.thymeleaf.context.Context
+import java.io.File
 import java.io.FileOutputStream
 
 @Service
 class PdfTemplateConverterService(private val templateEngine: TemplateEngine) {
 
-    fun generateAndSave(template: String, data: Map<String, Any>, output: String) {
+    fun generateAndSave(template: String, data: Map<String, Any>, output: String): File {
         val outputStream = generate(template, data)
         val fileOutputStream = FileOutputStream(output)
         outputStream.use {
             it.writeTo(fileOutputStream)
         }
+        return File(output)
     }
 
     fun generate(template: String, data: Map<String, Any>): java.io.ByteArrayOutputStream {

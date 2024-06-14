@@ -7,15 +7,17 @@ import org.thymeleaf.TemplateEngine
 import org.thymeleaf.context.Context
 import org.xhtmlrenderer.pdf.ITextRenderer
 import java.io.ByteArrayOutputStream
+import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
 
 @Service
 class PdfTemplateGeneratorService(private val templateEngine: TemplateEngine) {
 
-    fun generateFile(template: String, data: Map<String, Any>, output: String) {
+    fun generateFile(template: String, data: Map<String, Any>, output: String): File {
         val outputStream = FileOutputStream(output)
         generate(template, data, outputStream)
+        return File(output)
     }
 
     fun generateStream(template: String, data: Map<String, Any>): ByteArrayOutputStream {
