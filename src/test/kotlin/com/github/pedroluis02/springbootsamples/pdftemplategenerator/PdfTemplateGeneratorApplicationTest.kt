@@ -28,10 +28,10 @@ class PdfTemplateGeneratorApplicationTest {
             "logoQrData" to createQrCodeData()
         )
 
-        val outputFile = "template-v2.pdf"
-        service.generateFile("users-flying-template", data, outputFile)
+        val file = service.generateFile("users-flying-template", data, "template-v2.pdf")
 
-        assertThat(File(outputFile)).exists()
+        assertThat(file).exists()
+        assertThat(file.delete()).isTrue()
     }
 
     private fun loadLogoData(): String {
