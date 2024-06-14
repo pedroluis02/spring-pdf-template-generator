@@ -8,7 +8,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import java.io.File
 
 @SpringBootTest
 class PdfTemplateGeneratorApplicationTest {
@@ -28,7 +27,7 @@ class PdfTemplateGeneratorApplicationTest {
             "logoQrData" to createQrCodeData()
         )
 
-        val file = service.generateFile("users-flying-template", data, "template-v2.pdf")
+        val file = service.generate("users-flying-template", data, "template-v2.pdf")
 
         assertThat(file).exists()
         assertThat(file.delete()).isTrue()

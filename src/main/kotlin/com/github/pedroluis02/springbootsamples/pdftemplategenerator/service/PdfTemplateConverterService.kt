@@ -12,9 +12,9 @@ import java.io.File
 import java.io.FileOutputStream
 
 @Service
-class PdfTemplateConverterService(private val templateEngine: TemplateEngine) {
+class PdfTemplateConverterService(private val templateEngine: TemplateEngine) : PdfFileGeneratorService {
 
-    fun generateAndSave(template: String, data: Map<String, Any>, output: String): File {
+    override fun generate(template: String, data: Map<String, Any>, output: String): File {
         val outputStream = generate(template, data)
         val fileOutputStream = FileOutputStream(output)
         outputStream.use {
@@ -23,7 +23,7 @@ class PdfTemplateConverterService(private val templateEngine: TemplateEngine) {
         return File(output)
     }
 
-    fun generate(template: String, data: Map<String, Any>): java.io.ByteArrayOutputStream {
+    override fun generate(template: String, data: Map<String, Any>): java.io.ByteArrayOutputStream {
         val context = Context()
         context.setVariables(data)
 

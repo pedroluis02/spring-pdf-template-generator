@@ -20,7 +20,7 @@ class PdfTemplateConverterApplicationTest {
         }
 
         val data = mapOf<String, Any>("users" to users)
-        val file = service.generateAndSave("users-template", data, "template.pdf")
+        val file = service.generate("users-template", data, "template.pdf")
 
         assertThat(file).exists()
         assertThat(file.delete()).isTrue()

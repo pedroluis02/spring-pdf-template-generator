@@ -1,6 +1,5 @@
 package com.github.pedroluis02.springbootsamples.pdftemplategenerator.service
 
-
 import com.github.pedroluis02.springbootsamples.pdftemplategenerator.image.ImageReplacedElementFactory
 import org.springframework.stereotype.Service
 import org.thymeleaf.TemplateEngine
@@ -12,15 +11,15 @@ import java.io.FileOutputStream
 import java.io.OutputStream
 
 @Service
-class PdfTemplateGeneratorService(private val templateEngine: TemplateEngine) {
+class PdfTemplateGeneratorService(private val templateEngine: TemplateEngine) : PdfFileGeneratorService {
 
-    fun generateFile(template: String, data: Map<String, Any>, output: String): File {
+    override fun generate(template: String, data: Map<String, Any>, output: String): File {
         val outputStream = FileOutputStream(output)
         generate(template, data, outputStream)
         return File(output)
     }
 
-    fun generateStream(template: String, data: Map<String, Any>): ByteArrayOutputStream {
+    override fun generate(template: String, data: Map<String, Any>): ByteArrayOutputStream {
         val outputStream = ByteArrayOutputStream()
         generate(template, data, outputStream)
         return outputStream
