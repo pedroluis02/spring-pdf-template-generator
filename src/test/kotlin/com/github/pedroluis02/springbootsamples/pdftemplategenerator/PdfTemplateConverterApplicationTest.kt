@@ -1,6 +1,6 @@
 package com.github.pedroluis02.springbootsamples.pdftemplategenerator
 
-import com.github.pedroluis02.springbootsamples.pdftemplategenerator.model.User
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.sample.createUsersSampleV1
 import com.github.pedroluis02.springbootsamples.pdftemplategenerator.service.PdfTemplateConverterService
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
@@ -15,12 +15,7 @@ class PdfTemplateConverterApplicationTest {
 
     @Test
     fun shouldGeneratePdf() {
-        val users = List(20) {
-            User("Name $it", "LastName $it", "example-$it@test.com")
-        }
-
-        val data = mapOf<String, Any>("users" to users)
-        val file = service.generate("users-template", data, "template.pdf")
+        val file = service.generate("users-template", createUsersSampleV1(20), "template.pdf")
 
         assertThat(file).exists()
         assertThat(file.delete()).isTrue()
