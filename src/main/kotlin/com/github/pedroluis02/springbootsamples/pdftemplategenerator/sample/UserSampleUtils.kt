@@ -1,8 +1,8 @@
 package com.github.pedroluis02.springbootsamples.pdftemplategenerator.sample
 
-import com.github.pedroluis02.springbootsamples.pdftemplategenerator.image.BarcodeImageUtils
-import com.github.pedroluis02.springbootsamples.pdftemplategenerator.image.Base64ImageUtils
 import com.github.pedroluis02.springbootsamples.pdftemplategenerator.model.User
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.reporting.image.BarcodeImageUtils
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.reporting.image.Base64ImageUtils
 
 fun createUsersSampleV1(size: Int) = mapOf<String, Any>("users" to createUsers(size))
 

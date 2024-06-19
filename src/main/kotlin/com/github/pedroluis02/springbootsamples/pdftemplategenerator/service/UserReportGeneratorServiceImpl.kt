@@ -1,5 +1,8 @@
 package com.github.pedroluis02.springbootsamples.pdftemplategenerator.service
 
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.reporting.PdfFileGeneratorService
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.reporting.PdfTemplateConverterService
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.reporting.PdfTemplateGeneratorService
 import com.github.pedroluis02.springbootsamples.pdftemplategenerator.sample.createUsersSampleV1
 import com.github.pedroluis02.springbootsamples.pdftemplategenerator.sample.createUsersSampleV2
 import org.springframework.stereotype.Service

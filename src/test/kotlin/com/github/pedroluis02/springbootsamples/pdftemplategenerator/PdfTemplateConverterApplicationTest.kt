@@ -1,7 +1,7 @@
 package com.github.pedroluis02.springbootsamples.pdftemplategenerator
 
+import com.github.pedroluis02.springbootsamples.pdftemplategenerator.reporting.PdfTemplateConverterService
 import com.github.pedroluis02.springbootsamples.pdftemplategenerator.sample.createUsersSampleV1
-import com.github.pedroluis02.springbootsamples.pdftemplategenerator.service.PdfTemplateConverterService
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

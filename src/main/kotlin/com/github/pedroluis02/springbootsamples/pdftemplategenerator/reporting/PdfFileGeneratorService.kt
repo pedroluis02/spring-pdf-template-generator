@@ -1,4 +1,4 @@
-package com.github.pedroluis02.springbootsamples.pdftemplategenerator.service
+package com.github.pedroluis02.springbootsamples.pdftemplategenerator.reporting
 
 import java.io.ByteArrayOutputStream
 import java.io.File
