@@ -16,6 +16,6 @@ object Base64ImageUtils {
     }
 
     private fun createData(type: String, data: String): String {
-        return "data:image/$type;base64,$data";
+        return "data:image/$type;base64,$data"
     }
 }

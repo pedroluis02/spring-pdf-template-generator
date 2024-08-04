@@ -16,7 +16,6 @@ private fun createUsers(size: Int) = List(size) {
     User("Name $it", "LastName $it", "example-$it@test.com")
 }
 
-
 private fun loadLogoData(): String {
     return Base64ImageUtils.encodeFromResource("jpeg", "templates/img/users-logo.jpg")
 }
